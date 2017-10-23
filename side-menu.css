@@ -39,6 +39,8 @@ This is the parent `<div>` that contains the menu and the content area.
 The content `<div>` is where all your content goes.
 */
 .content {
+    position: relative;
+    left: 150px;
     margin: 0 auto;
     padding: 0 2em;
     max-width: 800px;
@@ -47,6 +49,8 @@ The content `<div>` is where all your content goes.
 }
 
 .header {
+     position: relative;
+     left: 150px;
      margin: 0;
      color: #333;
      text-align: center;
