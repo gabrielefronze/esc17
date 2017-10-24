@@ -80,7 +80,7 @@ int main() {
   float c=0;
 #ifdef ADHOC_RTTI
   std::cout << "using ad-hoc RTTI" << std::endl;
-  for (int i=0; i<20000; ++i) {  // here we know that can be only either C or B 
+  for (int i=0; i<size; ++i) {  // here we know that can be only either C or B 
     for (auto const & p : pa) c += (*p).type==3 ? static_cast<C const*>(p)->comp() : static_cast<B const*>(p)->comp();
   }
 #elif USE_SOA
@@ -89,12 +89,12 @@ int main() {
   std::vector<float> data(pa.size());
   for (auto i=0U; i<pa.size(); ++i) { types[i]=pa[i]->type; data[i]=pa[i]->data();}
   std::cout << "using SOA" << std::endl;
-  for (int i=0; i<20000; ++i) {  // here we know that can be only either C or B 
+  for (int i=0; i<size; ++i) {  // here we know that can be only either C or B 
     for (auto j=0U; j<data.size(); ++j) c += types[j]==3 ? C::doComp(data[j]) : B::doComp(data[j]);
   }
 #else
   std::cout << "using virtual function" << std::endl;
-  for (int i=0; i<20000; ++i) {
+  for (int i=0; i<size; ++i) {
     for (auto const & p : pa) c += p->comp();
   }
 #endif
