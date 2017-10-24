@@ -3,10 +3,15 @@
 //  c++ -O2 -Wall Virtual.cpp -fopt-info-vec
 //
 //  comment out the random_shuffle
-//  try to change the "pattern" in the vector of pointers
-//  use adhoc RTTI with -DADHOC_RTTI
-//   (then remove "final")
 //
+//  try to change the "pattern" in the vector of pointers
+//
+//  use adhoc RTTI with -DADHOC_RTTI
+//   (then remove "final" : =Dfinal='')
+//   and try  sed  's/static_cast/dynamic_cast/g' Virtual.cpp > Dyn.cpp
+//
+//
+//   use a SOA model with -DUSE_SOA
 //
 //  change -O2 in -Ofast
 //  add -funroll-loops  ??
