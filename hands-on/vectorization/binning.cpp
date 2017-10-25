@@ -39,7 +39,7 @@ int main() {
 
 
   //outer loop just to make timing "macroscopical"
-  for (int j=0; j<1000; ++j) {
+//  for (int j=0; j<1000; ++j) {
 
     for(auto & p : points.p) {
       p.phi = -M_PI +2.*M_PI*rgen(eng);
@@ -52,6 +52,9 @@ int main() {
     float binWidth = 2./NBin;
 
     Hist h;
+
+  // move it here to simplify perf analysis...
+  for (int j=0; j<1000; ++j) {
 
     delta -= (std::chrono::high_resolution_clock::now()-start);
     benchmark::touch(points);
