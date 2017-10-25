@@ -8,21 +8,23 @@ In this exercises you will vectorize the filling of an histogram in cartesian co
 
 1. start from the code in [`binning.cpp`]({{site.exercises_repo}}/hands-on/vectorization/binning.cpp)
 
-2. modify it to use `sin` and `cos` from [`simpleSinCos.h`]({{site.exercises_repo}}/hands-on/vectorization/simpleSinCos.h)
+2. compile it and use 'perf record ./a.out' & 'perf report' to identify "hot spot'
 
-3. optimize it to run faster in scalar mode
+3. modify it to use `sin` and `cos` from [`simpleSinCos.h`]({{site.exercises_repo}}/hands-on/vectorization/simpleSinCos.h)
 
-4. modify the code to enable auto-vectorization
+4. optimize it to run faster in scalar mode
 
-5. Change the code to use gcc native-vectors
+5. modify the code to enable auto-vectorization
+
+6. Change the code to use gcc native-vectors
 
 for each version compile with
 
-* c++ -O2 -Wall -fopt-info-vec -march=native binning.cpp
+* c++ -g -O2 -Wall -fopt-info-vec -march=native binning.cpp
 
-* c++ -O3 -Wall -fopt-info-vec -march=native binning.cpp
+* c++ -g -O3 -Wall -fopt-info-vec -march=native binning.cpp
 
-* c++ -Ofast -Wall -fopt-info-vec -march=native binning.cpp
+* c++ -g -Ofast -Wall -fopt-info-vec -march=native binning.cpp
 
 * try -funroll-loops
 
