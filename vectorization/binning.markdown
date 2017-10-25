@@ -4,7 +4,7 @@ layout: main
 section: vectorization
 ---
 
-In this exercises you will vectorize the filling of an histogram in cartesian coordinates starting from points in polar coordinates
+In this exercises you will speed-up the filling of an histogram in cartesian coordinates starting from points in polar coordinates
 
 1. start from the code in [`binning.cpp`]({{site.exercises_repo}}/hands-on/vectorization/binning.cpp)
 
