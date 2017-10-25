@@ -8,7 +8,7 @@ In this exercises you will vectorize the filling of an histogram in cartesian co
 
 1. start from the code in [`binning.cpp`]({{site.exercises_repo}}/hands-on/vectorization/binning.cpp)
 
-2. compile it and use 'perf record ./a.out' & 'perf report' to identify "hot spot'
+2. compile it and use 'perf record ./a.out' & 'perf report' to identify "hot spots'
 
 3. modify it to use `sin` and `cos` from [`simpleSinCos.h`]({{site.exercises_repo}}/hands-on/vectorization/simpleSinCos.h)
 
